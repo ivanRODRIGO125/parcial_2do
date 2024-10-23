@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class enemigo_disparo : MonoBehaviour
+public class dañoenemigo : MonoBehaviour
 {
-    public float daÃ±o;//daÃ±o que recibira el pj cuando colicione con la bala
+    public float daño;//daño que recibira el pj cuando colicione con la bala
     public GameObject Player;// referencia para sustraer vida del jugador
 
 
@@ -12,8 +12,10 @@ public class enemigo_disparo : MonoBehaviour
     {
         if (other.CompareTag("Player"))// si la bala enemiga choica con el jugador
         {
-            Player.GetComponent<datos_jugador>().vida_player -= daÃ±o;
-            /*Destroy(other.gameObject);*/// jugador se destruye
+            Destroy(gameObject);
+            Player.GetComponent<datos_jugador>().vida_player -= daño;//llama la script de datos jugador para restarle a la vida el valor de daño
+
+            
 
         }
     }

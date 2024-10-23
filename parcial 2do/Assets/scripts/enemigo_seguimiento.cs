@@ -15,5 +15,11 @@ public class enemgio_seguimiento : MonoBehaviour
     {
         Vector3 direction = (objetivo.position - transform.position).normalized;
         transform.position += direction * speed * Time.deltaTime;
+
+    }
+    private void OnCollisionEnter(Collision pared)
+    {
+        if (pared.gameObject.CompareTag("Wall"))
+        { Destroy(gameObject); }
     }
 }
