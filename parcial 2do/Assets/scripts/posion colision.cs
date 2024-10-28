@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 public class posioncolision : MonoBehaviour
 {
@@ -14,11 +16,14 @@ public class posioncolision : MonoBehaviour
             Player.GetComponent<datos_jugador>().posion_cantidad += 1;
             Destroy(gameObject);
         }
+
+
     }
+}
     
 
 
         
         
             
-}
+

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using Unity.VisualScripting;
 
 
 public class datos_jugador : MonoBehaviour
@@ -15,16 +16,20 @@ public class datos_jugador : MonoBehaviour
     public Text bullets;
     public Text vida;
     public Text posion;
-    public Text invisibilidad;
     public string life;
     public string posion_string;
     public float posion_cantidad;
     public bool invisible;
+    public float ylimit = 160;
+    public bool enemigo_vencido;
     
+
 
 
     private void Update()
     {
+        caida_mapa();
+
         posion_string = $"{posion_cantidad}";
         posion.text = posion_string;
 
@@ -59,10 +64,33 @@ public class datos_jugador : MonoBehaviour
         }
 
         void tomar() { posion_cantidad -= 1; }
+
+        if (vida_player >= 100)
+        {
+            vida_player = 100;
+        }
+
+        
     }
     void avisar_invisibilidad()
     { if (invisible == true) { } }
-}
+
+    //private void OnTriggerEnter(Collider other)
+    //{if (other.CompareTag("pildora"))
+    //    { pildoraTEXT.GetComponent<pildora_text_script>().tiempo_de_vida += 4;
+    //        Destroy(other.gameObject);
+    //    }
+        
+    //}
+
+    void caida_mapa()
+    {
+        if (this.transform.position.y < ylimit)
+            {
+            Destroy(gameObject);
+            SceneManager.LoadScene(1);
+        }
+    } }
 
 
 

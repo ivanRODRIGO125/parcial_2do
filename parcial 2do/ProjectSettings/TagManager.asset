@@ -9,6 +9,8 @@ TagManager:
   - bullet
   - door
   - enemy
+  - floor2
+  - pildora
   layers:
   - Default
   - TransparentFX

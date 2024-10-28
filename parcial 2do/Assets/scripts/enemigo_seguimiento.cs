@@ -7,6 +7,8 @@ public class enemgio_seguimiento : MonoBehaviour
 {
     public Transform objetivo;
     public float speed;
+    public bool enemigo_destruido;
+    public GameObject Player;
 
 
 
@@ -20,6 +22,8 @@ public class enemgio_seguimiento : MonoBehaviour
     private void OnCollisionEnter(Collision pared)
     {
         if (pared.gameObject.CompareTag("Wall"))
-        { Destroy(gameObject); }
+        { Destroy(gameObject);
+            Player.GetComponent<datos_jugador>().enemigo_vencido = true; 
+            }
     }
 }
