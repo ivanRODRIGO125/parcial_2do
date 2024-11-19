@@ -11,6 +11,8 @@ TagManager:
   - enemy
   - floor2
   - pildora
+  - fire
+  - waterbox
   layers:
   - Default
   - TransparentFX

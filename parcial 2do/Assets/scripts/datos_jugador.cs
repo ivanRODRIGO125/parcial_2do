@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using Unity.VisualScripting;
+using System;
 
 
 public class datos_jugador : MonoBehaviour
@@ -16,24 +17,31 @@ public class datos_jugador : MonoBehaviour
     public Text bullets;
     public Text vida;
     public Text posion;
+    public Text agua;
     public string life;
     public string posion_string;
     public float posion_cantidad;
     public bool invisible;
     public float ylimit = 160;
     public bool enemigo_vencido;
+    public Transform Player_transform;
+    public bool quemandose=false;
+    public float balas_agua;
+    string agua_string;
     
 
 
 
     private void Update()
     {
+        agua_string = $"water:{balas_agua}";
+        agua.text = agua_string;
         caida_mapa();
 
-        posion_string = $"{posion_cantidad}";
+        posion_string = $"pill:{posion_cantidad}";
         posion.text = posion_string;
 
-        life = $"{vida_player}";// con un string hago que la vida numerica se reconozca como string
+        life = "health:" + MathF.Round(vida_player);// con un string hago que la vida numerica se reconozca como string
         vida.text = life;//vinculo el texto a la vida reconocida como string
 
         if (vida_player <= 0)// si vida jugador es 0
@@ -48,7 +56,7 @@ public class datos_jugador : MonoBehaviour
             SceneManager.LoadScene(1);
         }
 
-        BALASstring = $"{balas}";
+        BALASstring = $"AMMO:{balas}";
 
         bullets.text = BALASstring;
         if (Input.GetKeyDown(KeyCode.Space))
@@ -69,7 +77,7 @@ public class datos_jugador : MonoBehaviour
         {
             vida_player = 100;
         }
-
+        
         
     }
     void avisar_invisibilidad()
