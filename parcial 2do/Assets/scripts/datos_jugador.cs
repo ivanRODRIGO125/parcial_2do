@@ -32,8 +32,25 @@ public class datos_jugador : MonoBehaviour
 
 
 
-    private void Update()
+    
+        private void Update()
     {
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         agua_string = $"water:{balas_agua}";
         agua.text = agua_string;
         caida_mapa();
@@ -48,7 +65,7 @@ public class datos_jugador : MonoBehaviour
         {
             Debug.Log("game over");// en consola dice game over
 
-            Destroy(gameObject);// jugador se destruye
+           /* Destroy(gameObject);*/// jugador se destruye
             ReloadScene();//funcion con codigo para reiniciar escena
         }
         void ReloadScene()
@@ -98,7 +115,10 @@ public class datos_jugador : MonoBehaviour
             Destroy(gameObject);
             SceneManager.LoadScene(1);
         }
-    } }
+    }
+
+    
+}
 
 
 

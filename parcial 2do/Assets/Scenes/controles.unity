@@ -263,8 +263,8 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: "apreta el boton izquierdo del mouse para disparar. la municion se vera
     reflejada abajo a la izquierda con un numero de color naranja. \n\nusa \"AWSD\"
-    para moverte. gira la camara con el mouse    \n\ny usa lapildora blanca con la
-    tecla \"espacio\"."
+    para moverte. gira la camara con el mouse    \n\ny usa la pildora blanca con
+    la tecla \"espacio\"."
 --- !u!222 &471584639
 CanvasRenderer:
   m_ObjectHideFlags: 0
